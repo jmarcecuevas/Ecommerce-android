@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="smallDimen">4dp</dimen>
+    <dimen name="largeDimen">16dp</dimen>
+    <dimen name="mediumDimen">8dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="appBar">300dp</dimen>
+    <dimen name="xLargeDimen">32dp</dimen>
+</resources>

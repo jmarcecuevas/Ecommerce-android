@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/navigation.xml" app:startDestination="@id/productsFragment">
+
+    <fragment android:id="@+id/productsFragment" android:name="com.marcecuevas.easybuy.view.fragment.ProductsFragment"
+              android:label="ProductsFragment">
+        <action android:id="@+id/action_productsFragment_to_productDetailFragment"
+                app:destination="@id/productDetailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/productDetailFragment"
+              android:name="com.marcecuevas.easybuy.view.fragment.ProductDetailFragment"
+              android:label="ProductDetailFragment"/>
+</navigation>

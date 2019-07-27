@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.marcecuevas.hotelsapp.data.model.Error
+import com.marcecuevas.easybuy.data.model.Error
 import com.tommasoberlose.progressdialog.ProgressDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,11 +1,11 @@
-package com.marcecuevas.easybuy.data.repository
+package com.marcecuevas.easybuy.data.dao
 
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.hotelsapp.data.model.Result
 
-interface ProductRepository {
+interface ProductDAO {
 
     suspend fun getProducts(): Result<ProductDTO>
 

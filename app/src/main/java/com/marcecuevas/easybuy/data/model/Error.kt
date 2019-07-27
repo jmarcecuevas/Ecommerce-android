@@ -1,3 +1,3 @@
-package com.marcecuevas.hotelsapp.data.model
+package com.marcecuevas.easybuy.data.model
 
 data class Error(val title: String?, val message: String)
