@@ -19,6 +19,14 @@ fun TextView.light(context: Context?){
     this.fontVariable(context,FontVariable.light)
 }
 
+fun TextView.regular(context: Context?){
+    this.fontVariable(context,FontVariable.regular)
+}
+
+fun TextView.black(context: Context?){
+    this.fontVariable(context,FontVariable.black)
+}
+
 inline fun <T: Any> guardLet(vararg elements: T?, closure: () -> Nothing): List<T> {
     return if (elements.all { it != null }) {
         elements.filterNotNull()

@@ -8,14 +8,6 @@
         android:orientation="vertical"
         tools:context=".view.activity.MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white"
-            android:id="@+id/toolbar">
-
-    </androidx.appcompat.widget.Toolbar>
-
     <fragment
             app:navGraph="@navigation/navigation"
             app:defaultNavHost="true"

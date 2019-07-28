@@ -38,7 +38,7 @@ class EasyBuyApplication : Application(), KodeinAware {
 
         AndroidThreeTen.init(this)
 
-        Font.instance.setFamilyName(applicationContext,"Gotham")
+        Font.instance.setFamilyName(applicationContext,"Roboto")
 
         CalligraphyConfig.initDefault(
             CalligraphyConfig.Builder()

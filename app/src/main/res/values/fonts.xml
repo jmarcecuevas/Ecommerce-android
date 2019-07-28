@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Montserrat">
+        <item>regular|fonts/Montserrat/Montserrat-Regular.ttf</item>
+        <item>light|fonts/Montserrat/Montserrat-Light.ttf</item>
+        <item>black|fonts/Montserrat/Montserrat-Black.ttf</item>
+        <item>bold|fonts/Montserrat/Montserrat-Bold.ttf</item>
+    </string-array>
+    <string-array name="Roboto">
+        <item>regular|fonts/Roboto/Roboto-Regular.ttf</item>
+        <item>light|fonts/Roboto/Roboto-Light.ttf</item>
+        <item>black|fonts/Roboto/Roboto-Black.ttf</item>
+        <item>bold|fonts/Roboto/Roboto-Bold.ttf</item>
+    </string-array>
+    <string-array name="Oswald">
+        <item>regular|fonts/Oswald/Oswald-Regular.ttf</item>
+        <item>light|fonts/Oswald/Oswald-Light.ttf</item>
+        <item>black|fonts/Oswald/Oswald-Black.ttf</item>
+        <item>bold|fonts/Oswald/Oswald-Bold.ttf</item>
+    </string-array>
+    <string-array name="TitilliumWeb">
+        <item>regular|fonts/TitilliumWeb/TitilliumWeb-Regular.ttf</item>
+        <item>light|fonts/TitilliumWeb/TitilliumWeb-Light.ttf</item>
+        <item>black|fonts/TitilliumWeb/TitilliumWeb-Black.ttf</item>
+        <item>bold|fonts/TitilliumWeb/TitilliumWeb-Bold.ttf</item>
+    </string-array>
+    <string-array name="Dosis">
+        <item>regular|fonts/Dosis/Dosis-Regular.ttf</item>
+        <item>light|fonts/Dosis/Dosis-Light.ttf</item>
+        <item>black|fonts/Dosis/Dosis-Black.ttf</item>
+        <item>bold|fonts/Dosis/Dosis-Bold.ttf</item>
+    </string-array>
+    <string-array name="TradeGothic">
+        <item>regular|fonts/Trade-Gothic/TradeGothicLT.ttf</item>
+        <item>light|fonts/Trade-Gothic/TradeGothicLTLight.ttf</item>
+        <item>black|fonts/Trade-Gothic/TradeGothicLTBold.ttf</item>
+        <item>bold|fonts/Trade-Gothic/TradeGothicLTBold.ttf</item>
+    </string-array>
+    <string-array name="TTPolls">
+        <item>regular|fonts/TTPolls/TTPollsLight.otf</item>
+        <item>light|fonts/TTPolls/TTPollsLight.otf</item>
+        <item>black|fonts/TTPolls/TTPollsBlack.otf</item>
+        <item>bold|fonts/TTPolls/TTPollsRegular.otf</item>
+    </string-array>
+    <string-array name="HelveticaNeue">
+        <item>regular|fonts/HelveticaNeue/HelveticaNeue_regular.otf</item>
+        <item>light|fonts/HelveticaNeue/HelveticaNeue_light.otf</item>
+        <item>black|fonts/HelveticaNeue/HelveticaNeue_black.otf</item>
+        <item>bold|fonts/HelveticaNeue/HelveticaNeue_bold.otf</item>
+    </string-array>
+    <string-array name="Gotham">
+        <item>regular|fonts/Gotham/Gotham-Regular.otf</item>
+        <item>light|fonts/Gotham/Gotham-Light.otf</item>
+        <item>black|fonts/Gotham/Gotham-Black.otf</item>
+        <item>bold|fonts/Gotham/Gotham-Bold.otf</item>
+    </string-array>
+    <string-array name="Graphik">
+        <item>light|fonts/Graphik/Graphik-300-Light.otf</item>
+        <item>regular|fonts/Graphik/Graphik-400-Regular.otf</item>
+        <item>bold|fonts/Graphik/Graphik-500-Medium.otf</item>
+        <item>black|fonts/Graphik/Graphik-600-Semibold.otf</item>
+    </string-array>
+    <string-array name="Officina">
+        <item>black|fonts/Officina/OfficinaSerITCStd-Black.otf</item>
+        <item>bold|fonts/Officina/OfficinaSerITCStd-Bold.otf</item>
+        <item>regular|fonts/Officina/OfficinaSerITCStd-Book.otf</item>
+        <item>light|fonts/Officina/OfficinaSerITCStd-Book.otf</item>
+    </string-array>
+</resources>

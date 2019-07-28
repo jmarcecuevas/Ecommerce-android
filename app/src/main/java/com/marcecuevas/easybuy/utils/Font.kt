@@ -12,7 +12,7 @@ class Font {
     }
 
     init {
-        this.familyName = "Gotham"
+        this.familyName = "Roboto"
         this.configurations = HashMap<String,String>()
     }
 

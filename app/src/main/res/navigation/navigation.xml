@@ -4,11 +4,13 @@
             android:id="@+id/navigation.xml" app:startDestination="@id/productsFragment">
 
     <fragment android:id="@+id/productsFragment" android:name="com.marcecuevas.easybuy.view.fragment.ProductsFragment"
-              android:label="ProductsFragment">
-        <action android:id="@+id/action_productsFragment_to_productDetailFragment"
-                app:destination="@id/productDetailFragment"/>
+              android:label="Productos">
+        <action
+                app:destination="@id/productDetailFragment" android:id="@+id/product_detail_fragment"/>
     </fragment>
     <fragment android:id="@+id/productDetailFragment"
               android:name="com.marcecuevas.easybuy.view.fragment.ProductDetailFragment"
-              android:label="ProductDetailFragment"/>
+              android:label="Detalle de producto">
+        <argument android:name="product_id" app:argType="string" app:nullable="true"/>
+    </fragment>
 </navigation>
