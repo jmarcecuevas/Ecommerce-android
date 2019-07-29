@@ -26,7 +26,6 @@ class ProductsFragment: GenericFragment() {
     }
 
     override fun init() {
-        activity?.title = getString(R.string.products);
 
         val adapter = ProductsAdapter(context) {
             navigateToProductDetail(it?.id)

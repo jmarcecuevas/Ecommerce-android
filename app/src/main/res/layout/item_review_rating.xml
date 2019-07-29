@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/indicatorNumberTV"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/starImageView"
+            android:src="@drawable/ic_star"
+            android:tint="@color/colorAccent"
+            android:layout_toEndOf="@+id/indicatorNumberTV"
+            android:contentDescription="@null"/>
+
+    <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:layout_toEndOf="@+id/starImageView"
+            android:layout_toStartOf="@+id/reviewsAmountTV"
+            android:thumb="@color/darkGrey"
+            android:progressTint="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            android:thumbTint="@android:color/transparent" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/reviewsAmountTV"
+            android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

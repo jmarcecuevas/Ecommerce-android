@@ -3,6 +3,7 @@ package com.marcecuevas.easybuy.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
@@ -10,7 +11,9 @@ import com.marcecuevas.easybuy.data.repository.ProductRepository
 import com.marcecuevas.hotelsapp.data.model.Result
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import org.jetbrains.anko.custom.async
 
 class ProductViewModel(val repository: ProductRepository): ViewModel() {
 
@@ -39,7 +42,7 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
         get() = error
 
     private fun initGetProductsCall(){
-        job = GlobalScope.launch {
+        viewModelScope.launch {
             val value = repository.getProducts()
             when(value){
                 is Result.Success -> products.postValue(value.data)
@@ -49,7 +52,7 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
     }
 
     fun getProductDetail(id: String){
-        job = GlobalScope.launch {
+        viewModelScope.launch {
             val value = repository.getProductDetail(id)
             when(value){
                 is Result.Success -> productDetail.postValue(value.data)
@@ -59,17 +62,12 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
     }
 
     fun getReviewsFromProduct(id: String){
-        job = GlobalScope.launch {
+        viewModelScope.launch {
             val value = repository.getReviewsFromProduct(id)
             when(value){
                 is Result.Success -> productReviews.postValue(value.data)
                 is Result.Error -> error.postValue(value.message.message)
             }
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
     }
 }

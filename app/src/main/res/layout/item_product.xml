@@ -60,10 +60,10 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/smallDimen"
+                        android:layout_marginStart="@dimen/mediumDimen"
                         android:layout_below="@+id/priceTV"
                         android:layout_toEndOf="@+id/listPriceTV"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/altPrimary"
                         android:id="@+id/discountTV"/>
 
             </RelativeLayout>

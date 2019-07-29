@@ -12,5 +12,13 @@
               android:name="com.marcecuevas.easybuy.view.fragment.ProductDetailFragment"
               android:label="Detalle de producto">
         <argument android:name="product_id" app:argType="string" app:nullable="true"/>
+        <action android:id="@+id/reviews_fragment"
+                app:destination="@id/productReviewsFragment"/>
+    </fragment>
+    <fragment android:id="@+id/productReviewsFragment"
+              android:name="com.marcecuevas.easybuy.view.fragment.ProductReviewsFragment"
+              android:label="Opiniones del producto">
+        <argument android:name="review" app:argType="com.marcecuevas.easybuy.data.model.DTO.ReviewDTO"
+                  app:nullable="true"/>
     </fragment>
 </navigation>

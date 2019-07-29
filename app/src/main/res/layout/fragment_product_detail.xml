@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/imageView"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="3:2"
+            android:contentDescription="@null"/>
+
+    <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/xLargeDimen"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textColor="@color/textDark"
+                    android:id="@+id/nameTV"/>
+
+            <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTV"
+                    android:id="@+id/starsRatingBar"
+                    android:numStars="5"
+                    android:stepSize="0.1"
+                    android:rating="4.5"
+                    android:layout_marginTop="@dimen/smallDimen"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:theme="@style/RatingBar"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/mediumDimen"
+                    android:textColor="@color/altSecondary"
+                    android:layout_alignTop="@+id/starsRatingBar"
+                    android:layout_alignBottom="@+id/starsRatingBar"
+                    android:gravity="center_vertical"
+                    android:layout_toEndOf="@+id/starsRatingBar"
+                    android:id="@+id/seeReviewsTV"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:layout_marginTop="@dimen/mediumDimen"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@+id/starsRatingBar"
+                    android:id="@+id/priceTV"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/priceTV"
+                    android:textColor="@color/darkGrey"
+                    android:id="@+id/listPriceTV"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/smallDimen"
+                    android:layout_below="@+id/priceTV"
+                    android:layout_toEndOf="@+id/listPriceTV"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/discountTV"/>
+
+        </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

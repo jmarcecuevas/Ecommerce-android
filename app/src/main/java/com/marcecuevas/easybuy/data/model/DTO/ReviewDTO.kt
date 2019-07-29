@@ -10,18 +10,20 @@ data class ReviewDTO(
 data class ItemDTO(
     val id: String?,
     @SerializedName("review_statistics")
-    val reviewStatistics: ReviewStatistics?,
-    val reviews: List<ReviewItemDTO>?
+    val reviewStatistics: ReviewStatisticsDTO?,
+    val reviews: List<ReviewItemDTO>?,
+    @SerializedName("total_review_count")
+    val totalReviewCount: Int?
 ): GenericDTO
 
-data class ReviewStatistics(
+data class ReviewStatisticsDTO(
     @SerializedName("average_overall_rating")
     val averageOverallRating: Float?,
     @SerializedName("rating_distribution")
-    val ratingDistribution: List<RatingDistribution>?
+    val ratingDistribution: List<RatingDistributionDTO>?
 ): GenericDTO
 
-data class RatingDistribution(
+data class RatingDistributionDTO(
     @SerializedName("rating_value")
     val ratingValue: Int?,
     val count: Int?

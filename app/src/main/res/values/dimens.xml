@@ -5,5 +5,6 @@
     <dimen name="mediumDimen">8dp</dimen>
     <dimen name="cardElevation">4dp</dimen>
     <dimen name="appBar">300dp</dimen>
-    <dimen name="xLargeDimen">32dp</dimen>
+    <dimen name="xLargeDimen">24dp</dimen>
+    <dimen name="xxLargeDimen">32dp</dimen>
 </resources>
