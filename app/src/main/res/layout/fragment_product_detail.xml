@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/largeDimen">
 
         <ImageView
                 android:layout_width="0dp"
@@ -25,7 +26,7 @@
         <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/xLargeDimen"
+                android:padding="@dimen/largeDimen"
                 android:id="@+id/detailContainer"
                 android:background="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -35,7 +36,7 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="28sp"
+                        android:textSize="22sp"
                         android:textColor="@color/textDark"
                         android:id="@+id/nameTV"/>
 
@@ -49,13 +50,13 @@
                         android:stepSize="0.1"
                         android:rating="4.5"
                         android:layout_marginTop="@dimen/smallDimen"
-                        style="?android:attr/ratingBarStyleIndicator"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:theme="@style/RatingBar"/>
 
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:textSize="18sp"
+                        android:textSize="12sp"
                         android:visibility="gone"
                         android:layout_marginStart="@dimen/mediumDimen"
                         android:textColor="@color/altSecondary"
@@ -68,7 +69,7 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:layout_marginTop="@dimen/mediumDimen"
                         android:textColor="@color/colorPrimary"
                         android:layout_below="@+id/starsRatingBar"
@@ -77,7 +78,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:textSize="12sp"
                         android:layout_below="@+id/priceTV"
                         android:textColor="@color/darkGrey"
                         android:id="@+id/listPriceTV"/>
@@ -85,7 +86,7 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:textSize="12sp"
                         android:layout_marginStart="@dimen/mediumDimen"
                         android:layout_below="@+id/priceTV"
                         android:layout_toEndOf="@+id/listPriceTV"
@@ -110,9 +111,17 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:text="@string/product_opinions"
                         android:textColor="@color/darkGrey"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/largeDimen"
+                        android:background="@color/textLight"
+                        android:layout_height="2dp">
+
+                </View>
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -139,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/mediumDimen"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         android:textColor="@color/darkGrey"
                         android:id="@+id/reviewsAmountTV"
                         android:layout_gravity="center_horizontal"/>
@@ -168,7 +177,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:layout_alignParentStart="true"
                     android:layout_toStartOf="@+id/arrowImageView"
                     android:textColor="@color/altSecondary"

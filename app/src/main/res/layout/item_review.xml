@@ -19,7 +19,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:id="@+id/dateTV"
             android:textColor="@color/darkGrey"
             android:layout_alignParentEnd="true"/>
@@ -27,7 +27,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:id="@+id/titleTV"
             android:textColor="@android:color/black"
             android:layout_marginTop="@dimen/smallDimen"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textDark"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:layout_marginTop="@dimen/smallDimen"
             android:id="@+id/descriptionTV"
             android:layout_below="@+id/titleTV"/>
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/darkGrey"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:layout_marginTop="@dimen/smallDimen"
             android:id="@+id/byTV"
             android:layout_below="@+id/descriptionTV"
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nicknameTV"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:textColor="@color/darkGrey"
             android:layout_below="@+id/descriptionTV"
             android:layout_marginTop="@dimen/smallDimen"

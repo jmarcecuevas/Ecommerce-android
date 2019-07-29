@@ -1,5 +1,6 @@
 package com.marcecuevas.easybuy.view.fragment
 
+import android.graphics.Paint
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,6 +20,7 @@ import com.marcecuevas.easybuy.view.adapter.ReviewsAdapter
 import kotlinx.android.synthetic.main.fragment_product_detail.overallRatiingTV
 import kotlinx.android.synthetic.main.fragment_product_detail.reviewsAmountTV
 import kotlinx.android.synthetic.main.fragment_product_detail.starsRatingBar
+import kotlinx.android.synthetic.main.item_product.view.*
 
 class ProductDetailFragment: GenericFragment(){
 
@@ -125,6 +127,7 @@ class ProductDetailFragment: GenericFragment(){
             nameTV.text = description
             priceTV.text = "$${price}"
             listPriceTV.text = "$${listPrice}"
+            listPriceTV.setPaintFlags(listPriceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
 
             discount?.let {
                 if (it > 0){
