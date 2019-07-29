@@ -4,6 +4,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.marcecuevas.easybuy.R
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
@@ -14,6 +15,10 @@ import com.marcecuevas.hotelsapp.utils.light
 import kotlinx.android.synthetic.main.fragment_product_detail.*
 import org.kodein.di.generic.instance
 import com.marcecuevas.easybuy.data.model.Error
+import com.marcecuevas.easybuy.view.adapter.ReviewsAdapter
+import kotlinx.android.synthetic.main.fragment_product_detail.overallRatiingTV
+import kotlinx.android.synthetic.main.fragment_product_detail.reviewsAmountTV
+import kotlinx.android.synthetic.main.fragment_product_detail.starsRatingBar
 
 class ProductDetailFragment: GenericFragment(){
 
@@ -35,6 +40,10 @@ class ProductDetailFragment: GenericFragment(){
         startObserving()
 
         seeReviewsTV.setOnClickListener(){
+            navigateToReviews(reviews)
+        }
+
+        seeAllReviewsContainer.setOnClickListener(){
             navigateToReviews(reviews)
         }
     }
@@ -73,6 +82,8 @@ class ProductDetailFragment: GenericFragment(){
             it?.let {
                 seeReviewsTV.text = "Ver ${it.items?.first()?.reviews?.size} opiniones"
                 seeReviewsTV.visibility = View.VISIBLE
+                starsRatingBar.visibility = View.VISIBLE
+                setupReviews(it)
             }
         })
 
@@ -84,6 +95,23 @@ class ProductDetailFragment: GenericFragment(){
     private fun navigateToReviews(reviews: ReviewDTO?){
         val directions = ProductDetailFragmentDirections.reviewsFragment(reviews)
         findNavController().navigate(directions)
+    }
+
+    private fun setupReviews(item: ReviewDTO){
+        val rating = reviews?.items?.first()?.reviewStatistics?.averageOverallRating
+        overallRatiingTV.text = rating.toString()
+        rating?.let { starsRatingBarAvg.rating = it }
+        reviewsAmountTV.text = "Promedio entre ${reviews?.items?.first()?.reviews?.size} opiniones"
+
+        setupAdapter()
+    }
+
+    private fun setupAdapter(){
+        val adapter = ReviewsAdapter(context)
+        reviewsRV.layoutManager = LinearLayoutManager(context)
+        reviewsRV.adapter = adapter
+        reviewsRV.isNestedScrollingEnabled = false
+        adapter.loadItems(reviews?.items?.first()?.reviews?.subList(0,3))
     }
 
     private fun setupView(item: ProductDetailDTO){
@@ -108,6 +136,7 @@ class ProductDetailFragment: GenericFragment(){
         }
         hideProgress()
     }
+
 
 
 

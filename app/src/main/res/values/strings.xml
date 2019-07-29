@@ -3,4 +3,6 @@
     <string name="error">Error</string>
     <string name="products">Productos</string>
     <string name="by">Por</string>
+    <string name="product_opinions">OPINIONES DEL PRODUCTO</string>
+    <string name="see_all_opinions">Ver todas las opiniones</string>
 </resources>
