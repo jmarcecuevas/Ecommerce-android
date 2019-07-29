@@ -20,7 +20,7 @@ data class ReviewStatisticsDTO(
     @SerializedName("average_overall_rating")
     val averageOverallRating: Float?,
     @SerializedName("rating_distribution")
-    val ratingDistribution: List<RatingDistributionDTO>?
+    var ratingDistribution: List<RatingDistributionDTO>?
 ): GenericDTO
 
 data class RatingDistributionDTO(

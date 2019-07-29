@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
+import com.marcecuevas.easybuy.data.model.DTO.RatingDistributionDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.easybuy.data.repository.ProductRepository
 import com.marcecuevas.hotelsapp.data.model.Result
@@ -14,6 +15,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.custom.async
+import java.util.*
 
 class ProductViewModel(val repository: ProductRepository): ViewModel() {
 
@@ -65,9 +67,18 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
         viewModelScope.launch {
             val value = repository.getReviewsFromProduct(id)
             when(value){
-                is Result.Success -> productReviews.postValue(value.data)
+                is Result.Success -> {
+                    value.data.items?.first()?.reviewStatistics?.ratingDistribution =
+                    value.data.items?.first()?.reviewStatistics?.ratingDistribution?.sortedByDescending { it.ratingValue }
+
+                    productReviews.postValue(value.data)
+                }
                 is Result.Error -> error.postValue(value.message.message)
             }
         }
+    }
+
+    fun sort(list: List<RatingDistributionDTO>){
+        list.sortedBy { it.ratingValue }
     }
 }

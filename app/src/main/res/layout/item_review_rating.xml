@@ -7,12 +7,14 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="14sp"
             android:layout_centerVertical="true"
             android:id="@+id/indicatorNumberTV"/>
 
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/smallDimen"
             android:id="@+id/starImageView"
             android:src="@drawable/ic_star"
             android:tint="@color/colorAccent"
@@ -27,7 +29,7 @@
             android:clickable="false"
             android:layout_toEndOf="@+id/starImageView"
             android:layout_toStartOf="@+id/reviewsAmountTV"
-            android:thumb="@color/darkGrey"
+            android:thumb="@color/textLight"
             android:progressTint="@color/colorAccent"
             android:backgroundTint="@color/colorAccent"
             android:thumbTint="@android:color/transparent" />
@@ -35,6 +37,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="14sp"
             android:layout_centerVertical="true"
             android:id="@+id/reviewsAmountTV"
             android:layout_alignParentEnd="true"/>

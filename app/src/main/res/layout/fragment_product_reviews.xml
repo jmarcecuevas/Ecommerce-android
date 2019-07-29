@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.core.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/textLight">
 
     <LinearLayout
@@ -22,13 +23,14 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:padding="@dimen/mediumDimen"
+                    android:padding="@dimen/largeDimen"
                     android:orientation="vertical"
-                    android:layout_marginBottom="@dimen/mediumDimen">
+                    android:layout_marginBottom="@dimen/largeDimen">
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/mediumDimen"
                         android:id="@+id/overallRatiingTV"
                         android:textColor="@android:color/black"
                         android:textSize="34sp"
@@ -50,7 +52,8 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:layout_marginTop="@dimen/mediumDimen"
+                        android:textSize="16sp"
                         android:textColor="@color/darkGrey"
                         android:id="@+id/reviewsAmountTV"
                         android:layout_gravity="center_horizontal"/>
@@ -69,6 +72,7 @@
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/largeDimen"
                 android:id="@+id/reviewsRV"
                 android:background="@android:color/white"
                 android:layout_marginTop="16dp">
@@ -77,4 +81,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/xxLargeDimen">
+
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/starsRatingBar"
+            android:numStars="5"
+            android:stepSize="1"
+            android:layout_marginTop="@dimen/smallDimen"
+            style="?android:attr/ratingBarStyleSmall"
+            android:theme="@style/RatingBar"
+            android:layout_gravity="center_horizontal"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:id="@+id/dateTV"
+            android:textColor="@color/darkGrey"
+            android:layout_alignParentEnd="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/titleTV"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/smallDimen"
+            android:layout_below="@+id/starsRatingBar"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textDark"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/smallDimen"
+            android:id="@+id/descriptionTV"
+            android:layout_below="@+id/titleTV"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkGrey"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/smallDimen"
+            android:id="@+id/byTV"
+            android:layout_below="@+id/descriptionTV"
+            android:text="@string/by"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nicknameTV"
+            android:textSize="16sp"
+            android:textColor="@color/darkGrey"
+            android:layout_below="@+id/descriptionTV"
+            android:layout_marginTop="@dimen/smallDimen"
+            android:layout_marginStart="@dimen/smallDimen"
+            android:layout_toEndOf="@+id/byTV"
+            android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>
