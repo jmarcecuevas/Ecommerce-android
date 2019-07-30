@@ -5,4 +5,9 @@
     <string name="by">Por</string>
     <string name="product_opinions">OPINIONES DEL PRODUCTO</string>
     <string name="see_all_opinions">Ver todas las opiniones</string>
+    <string name="discount">%1$d%% OFF</string>
+    <string name="amount_reviews">Ver %1$d opiniones"</string>
+    <string name="amount_reviews_only">%1$d opiniones"</string>
+    <string name="reviews_average">Promedio entre %1$d opiniones</string>
+
 </resources>

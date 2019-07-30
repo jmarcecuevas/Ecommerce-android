@@ -14,8 +14,7 @@ import com.marcecuevas.easybuy.data.model.DTO.MainImageDTO
 import com.marcecuevas.easybuy.view.component.OverlayImageViewer
 import com.stfalcon.imageviewer.StfalconImageViewer
 
-class SliderViewPager(private val context : Context, val images: List<MainImageDTO>?) : PagerAdapter(),
-    OverlayImageViewer.OverlayListener {
+class SliderViewPager(private val context : Context, val images: List<MainImageDTO>?) : PagerAdapter(){
 
     private var layoutInflater : LayoutInflater? = null
     var viewer: StfalconImageViewer<MainImageDTO?>? = null
@@ -69,9 +68,5 @@ class SliderViewPager(private val context : Context, val images: List<MainImageD
         val vp = container as ViewPager
         val v = `object` as View
         vp.removeView(v)
-    }
-
-    override fun onCloseClicked() {
-        viewer?.dismiss()
     }
 }

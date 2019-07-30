@@ -33,7 +33,7 @@ class Font {
     }
 
     fun defaultPath(): String? {
-        return this.pathForVariable(FontVariable.regular)
+        return this.pathForVariable(FontVariable.light)
     }
 
     fun pathForVariable(variable: FontVariable): String? {

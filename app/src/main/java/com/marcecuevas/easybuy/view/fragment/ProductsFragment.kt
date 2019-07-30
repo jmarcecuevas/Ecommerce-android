@@ -1,5 +1,6 @@
 package com.marcecuevas.easybuy.view.fragment
 
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -25,6 +26,12 @@ class ProductsFragment: GenericFragment() {
         return R.layout.fragment_products
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        showProgress()
+    }
+
     override fun init() {
 
         val adapter = ProductsAdapter(context) {
@@ -39,9 +46,11 @@ class ProductsFragment: GenericFragment() {
         viewModel.productsLivedata.observe(this, Observer {
             this.products = it
             adapter.loadItems(it.items)
+            hideProgress()
         })
 
         viewModel.errorLiveData.observe(this, Observer {
+            hideProgress()
             showError(Error(getString(R.string.error),it))
         })
     }

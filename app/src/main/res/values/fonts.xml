@@ -6,6 +6,12 @@
         <item>black|fonts/Montserrat/Montserrat-Black.ttf</item>
         <item>bold|fonts/Montserrat/Montserrat-Bold.ttf</item>
     </string-array>
+    <string-array name="Open_Sans">
+        <item>regular|fonts/Open_Sans/Open_Sans-Regular.ttf</item>
+        <item>light|fonts/Open_Sans/Open_Sans-Light.ttf</item>
+        <item>black|fonts/Open_Sans/Open_Sans-Black.ttf</item>
+        <item>bold|fonts/Open_Sans/Open_Sans-Bold.ttf</item>
+    </string-array>
     <string-array name="Roboto">
         <item>regular|fonts/Roboto/Roboto-Regular.ttf</item>
         <item>light|fonts/Roboto/Roboto-Light.ttf</item>

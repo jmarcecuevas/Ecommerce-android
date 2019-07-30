@@ -23,8 +23,6 @@ class ReviewsAdapter(context: Context?) : GenericRecyclerAdapter<ReviewsAdapter.
 
         init {
             itemView.titleTV.regular(context)
-            itemView.dateTV.light(context)
-            itemView.descriptionTV.light(context)
             itemView.byTV.regular(context)
             itemView.nicknameTV.regular(context)
         }

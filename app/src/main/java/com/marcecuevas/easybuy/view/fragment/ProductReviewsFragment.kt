@@ -15,18 +15,20 @@ class ProductReviewsFragment: GenericFragment(){
     override fun layout(): Int = R.layout.fragment_product_reviews
 
     override fun init() {
-        getArgs()
-    }
 
-    private fun getArgs() {
-        reviews = arguments?.let {
-            ProductReviewsFragmentArgs.fromBundle(it).review}
+        getArgs()
 
         setupViews(reviews)
 
         setupAverageReviewsAdapter(reviews)
 
         setupReviewsAdapter(reviews)
+    }
+
+    private fun getArgs() {
+
+        reviews = arguments?.let {
+            ProductReviewsFragmentArgs.fromBundle(it).review}
     }
 
     private fun setupViews(reviews: ReviewDTO?){

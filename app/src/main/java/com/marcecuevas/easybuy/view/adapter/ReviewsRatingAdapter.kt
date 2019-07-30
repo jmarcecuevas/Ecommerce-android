@@ -12,16 +12,16 @@ class ReviewsRatingAdapter(context: Context?,val totalAmount: Int?) : GenericRec
 
     override fun getHolder(parent: ViewGroup): ReviewsRatingAdapter.ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_review_rating,parent,false)
-        return ViewHolder(view,totalAmount)
+        return ViewHolder(view,totalAmount,context)
     }
 
-    class ViewHolder(itemView: View, val totalAmount: Int?) :
+    class ViewHolder(itemView: View, val totalAmount: Int?, val context: Context?) :
         GenericRecyclerAdapter.GenericViewHolder<RatingDistributionDTO>(itemView) {
 
         override fun bind(item: RatingDistributionDTO?) {
             with(item){
                 itemView.indicatorNumberTV.text = this?.ratingValue.toString()
-                itemView.reviewsAmountTV.text = "${this?.count} opiniones"
+                itemView.reviewsAmountTV.text = context?.getString(R.string.amount_reviews_only, this?.count)
 
                 totalAmount?.let{
                     itemView.seekBar.max = it

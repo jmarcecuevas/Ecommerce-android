@@ -19,7 +19,7 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
 
     override fun getHolder(parent: ViewGroup): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_product,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,context)
     }
 
     override fun onBindViewHolder(holder: ProductsAdapter.ViewHolder, position: Int) {
@@ -29,15 +29,10 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
         }
     }
 
-    class ViewHolder(itemView: View): GenericRecyclerAdapter.GenericViewHolder<ProductItemDTO>(itemView) {
+    class ViewHolder(itemView: View, val context: Context?): GenericRecyclerAdapter.GenericViewHolder<ProductItemDTO>(itemView) {
 
         init {
             with(itemView){
-                nameTV.light(context)
-                priceTV.light(context)
-                listPriceTV.light(context)
-                discountTV.light(context)
-
                 listPriceTV.setPaintFlags(listPriceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
             }
         }
@@ -65,7 +60,7 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
                 if (it > 0){
                     itemView.listPriceTV.visibility = View.VISIBLE
                     itemView.discountTV.visibility = View.VISIBLE
-                    itemView.discountTV.text = "${it}% OFF"
+                    itemView.discountTV.text = context?.getString(R.string.discount, it);
                 }
             }
         }

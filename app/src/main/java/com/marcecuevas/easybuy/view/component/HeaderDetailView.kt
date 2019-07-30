@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Paint
 import android.os.Build
+import android.provider.Settings.Global.getString
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -31,13 +32,6 @@ class HeaderDetailView: FrameLayout {
 
     init {
         val view = LayoutInflater.from(context).inflate(R.layout.view_header_detail, this)
-
-        nameTV.light(context)
-        seeReviewsTV.light(context)
-        priceTV.light(context)
-        seeReviewsTV.light(context)
-        listPriceTV.light(context)
-        discountTV.light(context)
     }
 
     @SuppressLint("SetTextI18n")
@@ -57,7 +51,7 @@ class HeaderDetailView: FrameLayout {
             if (it > 0){
                 listPriceTV.visibility = View.VISIBLE
                 discountTV.visibility = View.VISIBLE
-                discountTV.text = "${it}% OFF"
+                discountTV.text = context.getString(R.string.discount, it);
             }
         }
     }
@@ -65,7 +59,7 @@ class HeaderDetailView: FrameLayout {
     @SuppressLint("SetTextI18n")
     fun setupReviews(item: ReviewDTO?){
         item?.let {
-            seeReviewsTV.text = "Ver ${it.items?.first()?.reviews?.size} opiniones"
+            seeReviewsTV.text = context?.getString(R.string.amount_reviews,it.items?.first()?.reviews?.size)
             seeReviewsTV.visibility = View.VISIBLE
             starsRatingBar.visibility = View.VISIBLE
 

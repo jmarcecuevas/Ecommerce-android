@@ -28,6 +28,7 @@ class HeaderReviewsView: FrameLayout {
         rating?.let {
             starsRatingBarAvg.rating = it
         }
-        reviewsAmountTV.text = "Promedio entre ${reviews?.items?.first()?.reviews?.size} opiniones"
+        reviewsAmountTV.text = context?.getString(R.string.reviews_average,reviews?.items?.first()?.reviews?.size)
+
     }
 }
