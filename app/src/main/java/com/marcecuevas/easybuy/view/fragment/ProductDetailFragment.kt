@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.marcecuevas.easybuy.R
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
@@ -17,10 +16,13 @@ import kotlinx.android.synthetic.main.fragment_product_detail.*
 import org.kodein.di.generic.instance
 import com.marcecuevas.easybuy.data.model.Error
 import com.marcecuevas.easybuy.view.adapter.ReviewsAdapter
+import com.marcecuevas.easybuy.view.adapter.SliderViewPager
 import kotlinx.android.synthetic.main.fragment_product_detail.overallRatiingTV
 import kotlinx.android.synthetic.main.fragment_product_detail.reviewsAmountTV
 import kotlinx.android.synthetic.main.fragment_product_detail.starsRatingBar
 import kotlinx.android.synthetic.main.item_product.view.*
+import androidx.viewpager.widget.ViewPager
+
 
 class ProductDetailFragment: GenericFragment(){
 
@@ -119,9 +121,10 @@ class ProductDetailFragment: GenericFragment(){
     private fun setupView(item: ProductDetailDTO){
         with(item){
             context?.let {
-                Glide.with(it)
-                    .load("http:${mainImage?.url}")
-                    .into(imageView)
+                val adapter = SliderViewPager(it,resources.images)
+                viewPager.adapter = adapter
+
+                pageIndicator.attachToViewPager(viewPager)
             }
 
             nameTV.text = description
