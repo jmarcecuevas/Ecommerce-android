@@ -6,14 +6,24 @@
     <fragment android:id="@+id/productsFragment" android:name="com.marcecuevas.easybuy.view.fragment.ProductsFragment"
               android:label="Productos">
         <action
-                app:destination="@id/productDetailFragment" android:id="@+id/product_detail_fragment"/>
+                app:destination="@id/productDetailFragment"
+                android:id="@+id/product_detail_fragment"
+                app:enterAnim="@anim/pull_in_right"
+                app:exitAnim="@anim/push_out_left"
+                app:popEnterAnim="@anim/pull_in_left"
+                app:popExitAnim="@anim/push_out_right"/>
     </fragment>
     <fragment android:id="@+id/productDetailFragment"
               android:name="com.marcecuevas.easybuy.view.fragment.ProductDetailFragment"
               android:label="Detalle de producto">
         <argument android:name="product_id" app:argType="string" app:nullable="true"/>
-        <action android:id="@+id/reviews_fragment"
-                app:destination="@id/productReviewsFragment"/>
+        <action
+                android:id="@+id/reviews_fragment"
+                app:destination="@id/productReviewsFragment"
+                app:enterAnim="@anim/pull_in_right"
+                app:exitAnim="@anim/push_out_left"
+                app:popEnterAnim="@anim/pull_in_left"
+                app:popExitAnim="@anim/push_out_right"/>
     </fragment>
     <fragment android:id="@+id/productReviewsFragment"
               android:name="com.marcecuevas.easybuy.view.fragment.ProductReviewsFragment"
