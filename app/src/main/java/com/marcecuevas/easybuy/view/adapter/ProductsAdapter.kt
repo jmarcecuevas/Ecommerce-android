@@ -40,6 +40,7 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
         @SuppressLint("SetTextI18n")
         override fun bind(item: ProductItemDTO?) {
             with(item){
+
                 Glide.with(itemView)
                 .load("http:${this?.imageURL}")
                 .into(itemView.imageView)
