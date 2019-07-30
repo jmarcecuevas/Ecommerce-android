@@ -5,12 +5,10 @@ import android.net.ConnectivityManager
 import com.marcecuevas.hotelsapp.utils.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.io.IOException
 
 class ConnectivityInterceptorImpl(context: Context): ConnectivityInterceptor {
 
     private val appContext = context.applicationContext
-
 
     override fun intercept(chain: Interceptor.Chain): Response {
         if(!isOnline())

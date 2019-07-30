@@ -12,7 +12,6 @@ import com.marcecuevas.hotelsapp.utils.regular
 import kotlinx.android.synthetic.main.item_review.view.*
 import android.annotation.SuppressLint
 
-
 class ReviewsAdapter(context: Context?) : GenericRecyclerAdapter<ReviewsAdapter.ViewHolder, ReviewItemDTO>(context) {
 
     override fun getHolder(parent: ViewGroup): ViewHolder {

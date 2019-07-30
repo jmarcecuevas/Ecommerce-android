@@ -18,9 +18,7 @@ class SliderViewPager(private val context : Context, val images: List<MainImageD
     OverlayImageViewer.OverlayListener {
 
     private var layoutInflater : LayoutInflater? = null
-
     var viewer: StfalconImageViewer<MainImageDTO?>? = null
-    var overlayView: OverlayImageViewer? = null
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view ===  `object`
@@ -37,20 +35,22 @@ class SliderViewPager(private val context : Context, val images: List<MainImageD
         val v = layoutInflater!!.inflate(R.layout.item_slider_viewpager , null)
         val image = v.findViewById<View>(R.id.imageview) as ImageView
 
-        //overlayView = OverlayImageViewer(context)
-
         setupListener(image,position)
 
         images?.get(position)?.let {
-            Glide.with(context)
-                .load("http:${it.url}")
-                .into(image)
+            setupImage("http:${it.url}",image)
         }
 
         val vp = container as ViewPager
         vp.addView(v , 0)
 
         return v
+    }
+
+    fun setupImage(url: String?, toImage: ImageView){
+        Glide.with(context)
+            .load(url)
+            .into(toImage)
     }
 
     fun setupListener(toImage: ImageView, position: Int){
@@ -60,11 +60,7 @@ class SliderViewPager(private val context : Context, val images: List<MainImageD
                     .load("http:${image?.url}")
                     .into(view)
             }
-            //.withOverlayView(overlayView)
             .withStartPosition(position)
-//            .withImageChangeListener() { position ->
-//                images?.size?.let { it1 -> overlayView?.setup(position + 1, it1) }
-//            }
             .show()
         }
     }
@@ -77,7 +73,5 @@ class SliderViewPager(private val context : Context, val images: List<MainImageD
 
     override fun onCloseClicked() {
         viewer?.dismiss()
-        overlayView?.removeAllViews()
     }
-
 }

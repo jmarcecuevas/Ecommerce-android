@@ -1,13 +1,11 @@
 package com.marcecuevas.easybuy.view.fragment
 
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.marcecuevas.easybuy.R
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.easybuy.view.adapter.ReviewsAdapter
 import com.marcecuevas.easybuy.view.adapter.ReviewsRatingAdapter
 import kotlinx.android.synthetic.main.fragment_product_reviews.*
-import java.util.*
 
 
 class ProductReviewsFragment: GenericFragment(){
@@ -32,11 +30,7 @@ class ProductReviewsFragment: GenericFragment(){
     }
 
     private fun setupViews(reviews: ReviewDTO?){
-        val rating = reviews?.items?.first()?.reviewStatistics?.averageOverallRating
-        overallRatiingTV.text = rating.toString()
-        rating?.let { starsRatingBar.rating = it }
-
-        reviewsAmountTV.text = "Promedio entre ${reviews?.items?.first()?.reviews?.size} opiniones"
+        reviews?.let { headerReviews.setupReviews(it) }
     }
 
     private fun setupAverageReviewsAdapter(reviews: ReviewDTO?){

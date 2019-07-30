@@ -33,11 +33,6 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
 
         init {
             with(itemView){
-                nameTV.textSize = 14f
-                priceTV.textSize = 20f
-                listPriceTV.textSize = 12f
-                discountTV.textSize = 12f
-
                 nameTV.light(context)
                 priceTV.light(context)
                 listPriceTV.light(context)
@@ -61,12 +56,16 @@ class ProductsAdapter(context: Context?, val onClick: (ProductItemDTO?) -> Unit)
                 itemView.listPriceTV.visibility = View.GONE
                 itemView.discountTV.visibility = View.GONE
 
-                this?.discount?.let {
-                    if (it > 0){
-                        itemView.listPriceTV.visibility = View.VISIBLE
-                        itemView.discountTV.visibility = View.VISIBLE
-                        itemView.discountTV.text = "${it}% OFF"
-                    }
+                handleDiscount(this?.discount)
+            }
+        }
+
+        fun handleDiscount(discount: Int?){
+            discount?.let {
+                if (it > 0){
+                    itemView.listPriceTV.visibility = View.VISIBLE
+                    itemView.discountTV.visibility = View.VISIBLE
+                    itemView.discountTV.text = "${it}% OFF"
                 }
             }
         }

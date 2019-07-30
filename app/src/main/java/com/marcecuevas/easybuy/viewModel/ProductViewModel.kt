@@ -25,8 +25,6 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
     private val productDetail = MutableLiveData<ProductDetailDTO>()
     private val productReviews = MutableLiveData<ReviewDTO>()
 
-    private var job: Job? = null
-
     init {
         this.initGetProductsCall()
     }
@@ -76,9 +74,5 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
                 is Result.Error -> error.postValue(value.message.message)
             }
         }
-    }
-
-    fun sort(list: List<RatingDistributionDTO>){
-        list.sortedBy { it.ratingValue }
     }
 }

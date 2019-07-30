@@ -34,78 +34,16 @@
                 app:dotColor="@color/darkGrey"
                 app:selectedDotColor="@color/colorAccent"/>
 
-        <RelativeLayout
+        <com.marcecuevas.easybuy.view.component.HeaderDetailView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/largeDimen"
                 android:id="@+id/detailContainer"
-                android:background="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@+id/pageIndicator"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginBottom="@dimen/largeDimen">
 
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:textColor="@color/textDark"
-                        android:id="@+id/nameTV"/>
-
-                <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/nameTV"
-                        android:visibility="gone"
-                        android:id="@+id/starsRatingBar"
-                        android:numStars="5"
-                        android:stepSize="0.1"
-                        android:rating="4.5"
-                        android:layout_marginTop="@dimen/smallDimen"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:theme="@style/RatingBar"/>
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:textSize="12sp"
-                        android:visibility="gone"
-                        android:layout_marginStart="@dimen/mediumDimen"
-                        android:textColor="@color/altSecondary"
-                        android:layout_alignTop="@+id/starsRatingBar"
-                        android:layout_alignBottom="@+id/starsRatingBar"
-                        android:gravity="center_vertical"
-                        android:layout_toEndOf="@+id/starsRatingBar"
-                        android:id="@+id/seeReviewsTV"/>
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="24sp"
-                        android:layout_marginTop="@dimen/mediumDimen"
-                        android:textColor="@color/colorPrimary"
-                        android:layout_below="@+id/starsRatingBar"
-                        android:id="@+id/priceTV"/>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:layout_below="@+id/priceTV"
-                        android:textColor="@color/darkGrey"
-                        android:id="@+id/listPriceTV"/>
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:layout_marginStart="@dimen/mediumDimen"
-                        android:layout_below="@+id/priceTV"
-                        android:layout_toEndOf="@+id/listPriceTV"
-                        android:textColor="@color/altPrimary"
-                        android:id="@+id/discountTV"/>
-
-            </RelativeLayout>
+        </com.marcecuevas.easybuy.view.component.HeaderDetailView>
 
             <LinearLayout
                     android:layout_width="0dp"
@@ -132,38 +70,14 @@
                         android:layout_marginTop="@dimen/largeDimen"
                         android:background="@color/textLight"
                         android:layout_height="2dp">
-
                 </View>
 
-                <TextView
-                        android:layout_width="wrap_content"
+                <com.marcecuevas.easybuy.view.component.HeaderReviewsView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/mediumDimen"
-                        android:id="@+id/overallRatiingTV"
-                        android:textColor="@android:color/black"
-                        android:textSize="34sp"
-                        android:layout_gravity="center_horizontal"/>
+                        android:id="@+id/headerReviews">
 
-                <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/starsRatingBarAvg"
-                        android:numStars="5"
-                        android:stepSize="0.1"
-                        android:rating="4.5"
-                        android:layout_marginTop="@dimen/smallDimen"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:theme="@style/RatingBar"
-                        android:layout_gravity="center_horizontal"/>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/mediumDimen"
-                        android:textSize="12sp"
-                        android:textColor="@color/darkGrey"
-                        android:id="@+id/reviewsAmountTV"
-                        android:layout_gravity="center_horizontal"/>
+                </com.marcecuevas.easybuy.view.component.HeaderReviewsView>
 
                 <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"

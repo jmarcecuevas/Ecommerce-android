@@ -27,35 +27,12 @@
                     android:orientation="vertical"
                     android:layout_marginBottom="@dimen/largeDimen">
 
-                <TextView
-                        android:layout_width="wrap_content"
+                <com.marcecuevas.easybuy.view.component.HeaderReviewsView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/mediumDimen"
-                        android:id="@+id/overallRatiingTV"
-                        android:textColor="@android:color/black"
-                        android:textSize="34sp"
-                        android:layout_gravity="center_horizontal"/>
+                        android:id="@+id/headerReviews">
 
-                <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/starsRatingBar"
-                        android:numStars="5"
-                        android:stepSize="0.1"
-                        android:rating="4.5"
-                        android:layout_marginTop="@dimen/smallDimen"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:theme="@style/RatingBar"
-                        android:layout_gravity="center_horizontal"/>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/mediumDimen"
-                        android:textSize="12sp"
-                        android:textColor="@color/darkGrey"
-                        android:id="@+id/reviewsAmountTV"
-                        android:layout_gravity="center_horizontal"/>
+                </com.marcecuevas.easybuy.view.component.HeaderReviewsView>
 
                 <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"

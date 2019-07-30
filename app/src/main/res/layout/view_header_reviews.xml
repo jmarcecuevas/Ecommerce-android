@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/mediumDimen"
+                android:id="@+id/overallRatiingTV"
+                android:textColor="@android:color/black"
+                android:textSize="34sp"
+                android:layout_gravity="center_horizontal"/>
+
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/starsRatingBarAvg"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:rating="4.5"
+                android:layout_marginTop="@dimen/smallDimen"
+                style="?android:attr/ratingBarStyleSmall"
+                android:theme="@style/RatingBar"
+                android:layout_gravity="center_horizontal"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumDimen"
+                android:textSize="12sp"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/reviewsAmountTV"
+                android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
