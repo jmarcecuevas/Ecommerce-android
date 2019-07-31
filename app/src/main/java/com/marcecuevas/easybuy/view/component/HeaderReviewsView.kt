@@ -29,6 +29,5 @@ class HeaderReviewsView: FrameLayout {
             starsRatingBarAvg.rating = it
         }
         reviewsAmountTV.text = context?.getString(R.string.reviews_average,reviews?.items?.first()?.reviews?.size)
-
     }
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.marcecuevas.easybuy.R
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.Error
@@ -37,7 +38,7 @@ class ProductsFragment: GenericFragment() {
         val adapter = ProductsAdapter(context) {
             navigateToProductDetail(it?.id)
         }
-        productsRecyclerview.layoutManager = GridLayoutManager(context,2)
+        productsRecyclerview.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
         productsRecyclerview.adapter = adapter
 
         viewModel = ViewModelProviders.of(this,viewModelFactory).
