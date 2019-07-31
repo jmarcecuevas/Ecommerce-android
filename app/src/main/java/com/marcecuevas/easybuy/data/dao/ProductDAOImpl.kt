@@ -4,7 +4,7 @@ import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.easybuy.data.network.ProductREST
-import com.marcecuevas.hotelsapp.data.model.Result
+import com.marcecuevas.easybuy.data.model.Result
 import com.marcecuevas.hotelsapp.utils.NoConnectivityException
 import java.io.IOException
 

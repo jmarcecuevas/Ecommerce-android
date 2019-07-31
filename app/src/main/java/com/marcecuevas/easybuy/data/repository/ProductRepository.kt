@@ -3,7 +3,7 @@ package com.marcecuevas.easybuy.data.repository
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
-import com.marcecuevas.hotelsapp.data.model.Result
+import com.marcecuevas.easybuy.data.model.Result
 
 interface ProductRepository {
 

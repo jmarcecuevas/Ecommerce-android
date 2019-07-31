@@ -1,4 +1,4 @@
-package com.marcecuevas.hotelsapp.data.model
+package com.marcecuevas.easybuy.data.model
 
 import java.io.IOException
 

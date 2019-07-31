@@ -6,16 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marcecuevas.easybuy.data.model.DTO.ProductDTO
 import com.marcecuevas.easybuy.data.model.DTO.ProductDetailDTO
-import com.marcecuevas.easybuy.data.model.DTO.RatingDistributionDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.easybuy.data.repository.ProductRepository
-import com.marcecuevas.hotelsapp.data.model.Result
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.async
+import com.marcecuevas.easybuy.data.model.Result
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.custom.async
-import java.util.*
 
 class ProductViewModel(val repository: ProductRepository): ViewModel() {
 
@@ -41,7 +35,7 @@ class ProductViewModel(val repository: ProductRepository): ViewModel() {
     val errorLiveData: MutableLiveData<String>
         get() = error
 
-    private fun initGetProductsCall(){
+    fun initGetProductsCall(){
         viewModelScope.launch {
             val value = repository.getProducts()
             when(value){
