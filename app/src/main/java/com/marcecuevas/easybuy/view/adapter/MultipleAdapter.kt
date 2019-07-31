@@ -2,13 +2,11 @@ package com.marcecuevas.easybuy.view.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marcecuevas.easybuy.R
-import com.marcecuevas.easybuy.data.model.DTO.GenericDTO
 import com.marcecuevas.easybuy.data.model.DTO.RatingDistributionDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewDTO
 import com.marcecuevas.easybuy.data.model.DTO.ReviewItemDTO
@@ -18,6 +16,10 @@ import kotlinx.android.synthetic.main.item_review.view.*
 import kotlinx.android.synthetic.main.item_review_rating.view.*
 import kotlinx.android.synthetic.main.item_review_rating.view.reviewsAmountTV
 import kotlinx.android.synthetic.main.view_header_reviews.view.*
+import android.view.MotionEvent
+import android.view.View.OnTouchListener
+
+
 
 class MultipleAdapter(private val context: Context?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -37,8 +39,7 @@ class MultipleAdapter(private val context: Context?) : RecyclerView.Adapter<Recy
     companion object {
         private const val TYPE_HEADER = 0
         private const val TYPE_DISTRIBUTION = 1
-        private const val TYPE_SEPARATOR = 2
-        private const val TYPE_REVIEW = 3
+        private const val TYPE_REVIEW = 2
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -115,6 +116,10 @@ class MultipleAdapter(private val context: Context?) : RecyclerView.Adapter<Recy
 
     class ReviewsDistributionViewHolder(itemView: View, val totalAmount: Int?, val context: Context?) : RecyclerView.ViewHolder(itemView) {
 
+        init {
+            itemView.seekBar.setOnTouchListener(OnTouchListener { v, event -> true })
+        }
+
         fun bind(item: RatingDistributionDTO?) {
             with(item) {
                 itemView.indicatorNumberTV.text = this?.ratingValue.toString()
@@ -122,7 +127,9 @@ class MultipleAdapter(private val context: Context?) : RecyclerView.Adapter<Recy
 
                 totalAmount?.let {
                     itemView.seekBar.max = it
-                    this?.count?.let { itemView.seekBar.progress = it }
+                    this?.count?.let {
+                        itemView.seekBar.progress = it
+                    }
                 }
 
             }

@@ -15,6 +15,11 @@ class ProductDAOImpl(private val productREST: ProductREST) : ProductDAO {
             val response = productREST.getProducts().await()
             if (response.isSuccessful)
                 response.body()?.let {
+                    it.items?.filter {
+                        it.description != null && !it.description.isEmpty()
+                                && it.price != null && it.price > 0
+                    }
+
                     return Result.Success(it)
                 }
             return Result.Error(IOException("Ha ocurrido un error"))
@@ -42,6 +47,8 @@ class ProductDAOImpl(private val productREST: ProductREST) : ProductDAO {
             val response = productREST.getReviewsFromProduct(id).await()
             if(response.isSuccessful){
                 response.body()?.let {
+                    it.items?.first()?.reviewStatistics?.ratingDistribution =
+                        it.items?.first()?.reviewStatistics?.ratingDistribution?.sortedByDescending { it.ratingValue }
                     return Result.Success(it)
                 }
             }
