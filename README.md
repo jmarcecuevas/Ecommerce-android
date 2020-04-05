@@ -1,4 +1,4 @@
-# EasyBuy
+# E-commerce-android
 
 Es una aplicación en la que podrás visualizar un listado de productos junto a su nombre, precio, descuento, precio de lista, etc.
 Además contarás con una sección de detalle con los datos anteriormente nombrados pero también una galería de imágenes y 3 reviews asociadas al producto.
