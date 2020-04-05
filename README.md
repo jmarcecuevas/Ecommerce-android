@@ -40,13 +40,4 @@ Esta aplicación fue desarrollada 100% en Kotlin aplicando muchos de los patrone
 - Anko
 - LifeCycle
 
-# Decisiones
-
-Soy una persona que está constantemente intentando crecer y aprender las nuevas tendencias, herramientas, tecnologías y metodologías que van surgiendo con respecto al desarrollo.
-
-Por eso es que desde hace un tiempo opté por inclinarme hacia el uso de Kotlin como lenguaje principal para mis desarrollos, si bien llevo poco tiempo con este lenguaje, me he podido adaptar rápidamente y estoy mas que contento con ello.
-
-Como trato de mantenerme siempre al día también decidí probar Android architecture components y navigation components. En este proyecto traté de plasmar un poco todo esto de usar las últimas tecnologías siempre con la mirada en el producto y su impacto en el usuario.
-
-Me quedó pendiente hacer testing unitario, que lo hubiera hecho utilizando JUnit, Mockito y los Observer para detectar cambios en LiveData.
 
