@@ -5,6 +5,14 @@ Además contarás con una sección de detalle con los datos anteriormente nombra
 
 Por último, cuenta con una pantalla donde podrás ver todos los reviews del producto, cantidad de opiniones hechas por los usuarios y cuantos de ellos le dieron una estrella, dos, tres, cuatro o cinco.
 
+# Screenshots
+<p align="center">
+  <img src="screenshots/Screenshot_1586116677.png" width="175"/>
+  <img src="screenshots/Screenshot_1586116697.png" width="175"/>
+  <img src="screenshots/Screenshot_1586116708.png" width="175"/>
+  <img src="screenshots/Screenshot_1586116716.png" width="175"/>
+</p>
+
 # Detalles técnicos
 
 Esta aplicación fue desarrollada 100% en Kotlin aplicando muchos de los patrones y arquitectura sugeridas por Google en su última I/O como por ejemplo LiveData, ViewModel, Navigation components, etc.
